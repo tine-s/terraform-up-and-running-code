@@ -3,14 +3,14 @@ terraform {
 }
 
 provider "aws" {
-  region = "us-east-2"
+  region = "eu-west-1"
 
   # Allow any 2.x version of the AWS provider
   version = "~> 2.0"
 }
 
 module "webserver_cluster" {
-  source = "git@:github.com:tine-s/terraform-up-and-running-code"
+  source = "../../../modules/services/webserver-cluster"
 
   cluster_name           = var.cluster_name
   db_remote_state_bucket = var.db_remote_state_bucket
